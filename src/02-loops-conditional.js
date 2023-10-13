@@ -10,8 +10,15 @@
  */
 
 function isEven(number) {
-    
+    if(number % 2 === 0) {
+        return true;
+    } else if (number % 2 !== 0)
+        return false;
 }
+const result4 = isEven(4);
+console.log(result4);
+const anotherResult4 = isEven(7);
+console.log(anotherResult4);
 
 /**
  * This function checks if a number is within a range.
@@ -27,8 +34,14 @@ function isEven(number) {
  */
 
 function isWithinRange(n, min, max) {
-
+        if(n >= min && n <= max) {
+            return true
+        } else return false
 }
+const inRange = isWithinRange(5, 1, 10);
+console.log(inRange);
+const outOfRange = isWithinRange(15, 1, 10);
+console.log(outOfRange);
 
 /**
  * This function checks if a string contains the string "ba"
@@ -43,8 +56,16 @@ function isWithinRange(n, min, max) {
  */
 
 function stringContainsBa(string) {
-
+    if(string.includes("ba")) {
+        return true;
+    } else return false;
 }
+const bananaContainsBa = stringContainsBa("banana"); // true
+console.log(bananaContainsBa);
+const harborContainsBa = isWithinRange("harbor");
+console.log(harborContainsBa);
+const harborContainsBa2 = isWithinRange("habanana");
+console.log(harborContainsBa2);
 
 
 

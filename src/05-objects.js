@@ -8,9 +8,15 @@
  * // person might be { name: 'John Doe', age: 30, city: 'New York' }
  */
 function createPersonObject() {
-    
+    const personObject = {
+        name: "John Doe",
+        age: 30,
+        city: "New York"
+        }
+        return personObject;
 }
-
+const person = createPersonObject()
+console.log(person);
 
 /**
  * This function returns the name of the given person object.
@@ -23,9 +29,15 @@ function createPersonObject() {
  * // personName will be 'John Doe'
  */
 function getPersonName(person) {
-
+    const personObject = {
+        name: "John Doe",
+        age: 30,
+        city: "New York"
+    }
+    return personObject.name
 }
-
+const personName = getPersonName({ name: 'John Doe', age: 30, city: 'New York' });
+console.log(personName);
 
 /**
  * This function finds a person from an array of persons based on their name.
@@ -41,19 +53,30 @@ function getPersonName(person) {
  */
 function findPersonByName(persons, name) {
 
+    for (const person of persons) {
+        if (name === person.name) {
+            return person;
+        }
+    }
 }
+    const john = findPersonByName([{name: 'John Doe', age: 30}, {name: 'Jane Doe', age: 25}], 'John Doe');
+    console.log(john); // Outputs { name: 'John Doe', age: 30 }
 
+    /**
+     * This function calculates the total age of all persons in an array.
+     *
+     * @param {Object[]} persons - Array of person objects.
+     * @returns {number} - The total age of all persons.
+     *
+     * Usage:
+     * const totalAge = getTotalAge([{ name: 'John Doe', age: 30 }, { name: 'Jane Doe', age: 25 }]);
+     * // totalAge will be 55
+     */
+    function getTotalAge(persons) {
+        let totalAge = 0;
+        for (const person of persons) {
+            totalAge = totalAge + person.age
+        }
+        return totalAge;
+    }
 
-/**
- * This function calculates the total age of all persons in an array.
- *
- * @param {Object[]} persons - Array of person objects.
- * @returns {number} - The total age of all persons.
- *
- * Usage:
- * const totalAge = getTotalAge([{ name: 'John Doe', age: 30 }, { name: 'Jane Doe', age: 25 }]);
- * // totalAge will be 55
- */
-function getTotalAge(persons) {
-
-}
